@@ -1,0 +1,32 @@
+{
+    "id": "10BDD975",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595226794187.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "expression": "yeo_closed_convi",
+        "caption": "yeo_closed_convi",
+        "totalObservations": "1",
+        "displayedObservations": "1",
+        "variables": "7",
+        "cacheKey": "9377B05F",
+        "object": "yeo_closed_convi",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=yeo_closed_convi&cache_key=9377B05F&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3539893226735756402,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595226794187,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,32 @@
+{
+    "id": "32A51934",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595226189719.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "md_closed_convi",
+        "caption": "md_closed_convi",
+        "totalObservations": "6",
+        "displayedObservations": "6",
+        "variables": "3",
+        "cacheKey": "EA6F60A8",
+        "object": "md_closed_convi",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=md_closed_convi&cache_key=EA6F60A8&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8030597042934194720,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595226189719,
+    "read_only": false,
+    "read_only_alternatives": []
+}
