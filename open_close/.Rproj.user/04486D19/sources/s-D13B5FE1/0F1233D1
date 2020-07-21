@@ -1,0 +1,32 @@
+{
+    "id": "0F1233D1",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595218807687.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "expression": "closed_convi",
+        "caption": "closed_convi",
+        "totalObservations": "3",
+        "displayedObservations": "3",
+        "variables": "7",
+        "cacheKey": "97EF8732",
+        "object": "closed_convi",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=closed_convi&cache_key=97EF8732&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8080056003806104108,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595218807687,
+    "read_only": false,
+    "read_only_alternatives": []
+}

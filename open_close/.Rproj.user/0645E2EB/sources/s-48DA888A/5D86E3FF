@@ -1,0 +1,32 @@
+{
+    "id": "5D86E3FF",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595309677818.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "expression": "oriData",
+        "caption": "oriData",
+        "totalObservations": "2250",
+        "displayedObservations": "2250",
+        "variables": "16",
+        "cacheKey": "43BF4950",
+        "object": "oriData",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=oriData&cache_key=43BF4950&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7307491043415436322,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595309677818,
+    "read_only": false,
+    "read_only_alternatives": []
+}
