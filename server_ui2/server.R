@@ -7,7 +7,7 @@ library(sp)
 library(rgdal)
 library(reshape2)
 library(plyr)
-library(ggradar)
+
 library(dplyr)
 library(leaflet)
 library("lubridate")
@@ -15,16 +15,16 @@ library("MASS")
 library("scales")
 library(data.table)
 library(shinyjs)
-load(file="C:/Users/admin/Documents/R/data.RData")
-load(file="C:/Users/admin/Documents/R/emd_dd.RData")
-load(file="C:/Users/admin/Documents/R/emd_nn.RData")
-load(file="C:/Users/admin/Documents/R/rader.RData")
-load(file="C:/Users/admin/Documents/R/LOCAL_PEOPLE_DONG")
-load(file="C:/Users/admin/Documents/R/dong_ip.RData")
-load(file="C:/Users/admin/Documents/R/seoul2.RData")
-load(file="C:/Users/admin/Documents/R/crdentials.RData")
 
-load(file = "C:/Users/admin/Documents/R/open_close_data.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/data.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/emd_dd.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/emd_nn.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/rader.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/LOCAL_PEOPLE_DONG")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/dong_ip.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/seoul2.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/crdentials.RData")
+load(file = "C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/open_close_data.RData")
 
 
 user_Data <- reactivePoll(1000, NULL,
@@ -34,7 +34,7 @@ user_Data <- reactivePoll(1000, NULL,
                           },
                           # This function returns the content of log_file
                           valueFunc = function() {
-                            load(file="C:/Users/admin/Documents/R/crdentials.RData")
+                            load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/server_ui2/crdentials.RData")
                           }
 )
 #leflet 메인 지도 편의점 좌표 입력
@@ -338,11 +338,11 @@ server <- shinyServer(function(input, output) {
 
     
     #rader 차트 출력
-    output$rader <- renderPlot({
-      p<-raderchart(dong_code)
-      ggradar(p)+ theme(legend.position = "top")
-      
-    })
+    # output$rader <- renderPlot({
+    #   p<-raderchart(dong_code)
+    #   ggradar(p)+ theme(legend.position = "top")
+    #   
+    # })
     #rader 테이블 출력
     output$rader_t <- renderTable({
       p<-radertable(dong_code)
