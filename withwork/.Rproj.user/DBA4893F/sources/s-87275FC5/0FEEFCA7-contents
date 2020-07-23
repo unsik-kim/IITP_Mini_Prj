@@ -1,0 +1,49 @@
+install.packages('ploty')
+library(readxl)
+library(dplyr)
+
+
+data <- read_excel("C:/Users/admin/Documents/R/project1/seoul.xlsx")
+data1 <- data %>% filter(상권업종소분류명=="편의점")
+data2 <- data1 %>% select(상호명, 지점명, 시도명, 시군구코드, 시군구명, 행정동코드, 행정동명, 경도, 위도)
+data3 <- table(data1$시군구명)
+data4 <- data.frame(table(data2$행정동명))
+
+population <- read_excel("LOCAL_PEOPLE.xlsx")
+pop1 <- population %>% select(기준일ID,시간대구분,행정동코드, 총생활인구수)
+
+dong <- read_excel("행정동코드.xlsx")
+dong_ip <- dong %>% select(행자부행정동코드, 행정동명)
+dong_ip <- rename(dong_ip, "행정동코드" = "행자부행정동코드")
+
+dong_ip$행정동코드 <- as.numeric(as.double(dong_ip$행정동코드))
+pop2 <- pop1 %>%
+  group_by(행정동코드) %>%
+  summarise(mean_math = mean(총생활인구수), max_math = max(총생활인구수), min_math = min(총생활인구수)) 
+write.csv(dong_ip,"C:/Users/admin/Documents/R/dong_ip.csv")
+pop3 <- left_join(dong_ip,pop2, by="행정동코드")
+pop4 <- pop3 %>% select(행정동명,mean_math,max_math,min_math)
+
+names(pop4)[1] <- c("행정동명")
+names(pop4)[2] <- c("평균인구수")
+names(pop4)[3] <- c("최대인구수")
+names(pop4)[4] <- c("최소인구수")
+names(data4)[1] <- c("행정동명")
+names(data4)[2] <- c("점포수")
+
+total <- left_join(data4, pop4, by="행정동명")
+total$avgPop1 <- round(as.integer(total$평균인구수) / as.integer(total$점포수), 2)
+total$rank1 <- round(rank(-total$avgPop1))
+total$percent1 <- round(total$rank1/length(total$avgPop1)*100,2)
+
+total$avgPop2 <- round(as.integer(total$최대인구수) / as.integer(total$점포수), 2)
+total$rank2 <- round(rank(-total$avgPop2))
+total$percent2 <- round(total$rank2/length(total$avgPop2)*100,2)
+
+total$avgPop3 <- round(as.integer(total$최소인구수) / as.integer(total$점포수), 2)
+total$rank3 <- round(rank(-total$avgPop3))
+total$percent3 <- round(total$rank3/length(total$avgPop3)*100,2)
+
+histo <- hist(total$avgPop1, breaks=100)
+histo <- hist(total$avgPop2, breaks=100)
+histo <- hist(total$점포수, breaks=100)

@@ -1,0 +1,32 @@
+{
+    "id": "18ED3C57",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595481227921.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "expression": "rader",
+        "caption": "rader",
+        "totalObservations": 2,
+        "displayedObservations": 2,
+        "variables": 6,
+        "cacheKey": "CEA5375C",
+        "object": "rader",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=rader&cache_key=CEA5375C&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2637332750464,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595481227921,
+    "read_only": false,
+    "read_only_alternatives": []
+}

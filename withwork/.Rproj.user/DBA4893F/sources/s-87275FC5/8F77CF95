@@ -1,0 +1,32 @@
+{
+    "id": "8F77CF95",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595472134139.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "expression": "rader_data",
+        "caption": "rader_data",
+        "totalObservations": "1",
+        "displayedObservations": "1",
+        "variables": "2",
+        "cacheKey": "D8FDFBE7",
+        "object": "rader_data",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=rader_data&cache_key=D8FDFBE7&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2637729005112,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595472134139,
+    "read_only": false,
+    "read_only_alternatives": []
+}
