@@ -1,0 +1,32 @@
+{
+    "id": "46F85F02",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595480893135.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "expression": "rader_people",
+        "caption": "rader_people",
+        "totalObservations": 1,
+        "displayedObservations": 1,
+        "variables": 5,
+        "cacheKey": "7048EAD9",
+        "object": "rader_people",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=rader_people&cache_key=7048EAD9&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2459592266154403181,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595480893135,
+    "read_only": false,
+    "read_only_alternatives": []
+}

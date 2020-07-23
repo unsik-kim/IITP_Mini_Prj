@@ -1,0 +1,162 @@
+library(shiny)
+library(shinymanager)
+# 
+# credentials <- data.frame(
+#   user = c("shiny", "shinymanager"), # mandatory
+#   password = c("1234", "12345") # mandatory
+# )
+
+
+
+#dong <- as.list(dong_ip[2])
+
+ui <- (fluidPage(
+  tags$head(
+    tags$style(HTML('#search{text-align:left}'))
+  ),
+  
+  #verbatimTextOutput("auth_output"),
+  
+  titlePanel("상권분석"),
+  tags$br(),
+  
+  
+  sidebarLayout(
+    
+    mainPanel(style = "max-height: 900px",
+              
+              leafletOutput("map",height=900),
+              width = 8
+    ),
+    sidebarPanel(useShinyjs(),
+                 
+                 wellPanel(id="login_form",
+                           fluidRow(
+                             column(4,textInput("user_id","",width = 150,label = "아이디")),
+                             
+                             column(4,passwordInput("user_pw","",width = 150,label = "비밀번호"))),
+                           
+                           actionButton("login",label = "로그인"),
+                           actionButton("submit_show",label = "회원가입")
+                 ),
+                 
+                 
+                 conditionalPanel(condition = "input.submit_show % 2 == 1",
+                                  
+                                  wellPanel(id="submit_form",
+                                            "아이디",textInput("submit_id","",width = 150),
+                                            "비밀번호",passwordInput("submit_pw","",width = 150),
+                                            "비밀번호 확인 : ",passwordInput("submit_pw_cf","",width = 150),
+                                            actionButton("submit",label = "회원가입")
+                                  )),
+                 wellPanel(id="logout_form",
+                           fluidRow(
+                             column(6,textOutput("login_meg"),
+                             ),
+                             column(6,actionButton("logout",label = "로그아웃")
+                             ),
+                           )
+                           
+                 ),
+                 # fluidRow(column(5,
+                 #                 selectInput("select_category", label = h3("분야 선택"),
+                 #                             choices = list("커피전문점/카페/다방","편의점","라면김밥분식","후라이드/양념치킨","제과점"),
+                 #                             selected = "편의점",width = 200)),
+                 # 
+                 #          column(5,
+                 #                 selectInput("select1", label = h3("동 선택"),
+                 #                             #choices = list("잠실본동"=11710650, "명동"=11140550, "여의동"=11560540),
+                 #                             choices = setNames(dong_ip$행정동코드,dong_ip$행정동명),
+                 #                             selected = 11710650,width = 150)),
+                 #          column(2,
+                 #                 br(),br(),br(),
+                 #                 actionButton("search",label = "검색",style="align-item:center;")
+                 #          )),
+                 fluidRow(column(4,
+                                 selectInput("select_category", label = h3("분야 선택"),
+                                             choices = list("커피전문점/카페/다방","편의점","라면김밥분식","후라이드/양념치킨","제과점"),
+                                             selected = "편의점",width = 200)),
+                          
+                          column(3,
+                                 selectInput("select", label = h3("구 선택"),
+                                             choices = list("종로구"	=11110,
+                                                               "중구"	=11140,
+                                                               "용산구"	=11170,
+                                                               "성동구"	=11200,
+                                                               "광진구"	=11215,
+                                                               "동대문구"=	11230,
+                                                               "중랑구"	=11260,
+                                                               "성북구"	=11290,
+                                                               "강북구"	=11305,
+                                                               "도봉구"	=11320,
+                                                               "노원구"	=11350,
+                                                               "은평구"	=11380,
+                                                               "서대문구"	=11410,
+                                                               "마포구"	=11440,
+                                                               "양천구"	=11470,
+                                                               "강서구"	=11500,
+                                                               "구로구"	=11530,
+                                                               "금천구"	=11545,
+                                                               "영등포구"	=11560,
+                                                               "동작구"	=11590,
+                                                               "관악구"	=11620,
+                                                               "서초구"	=11650,
+                                                               "강남구"	=11680,
+                                                               "송파구"	=11710,
+                                                               "강동구"	=11740
+                                             ),
+                                             selected = 11710650,width = 150)),
+                          column(3,
+                                 uiOutput('select_value',label = h3("동 선택"))),
+                          column(2,
+                                 br(),br(),br(),
+                                 actionButton("search",label = "검색",style="align-item:center;")
+                          )),
+                 
+                 
+                 width=4,
+                 
+                 
+                 # Show a plot of the generated distribution
+                 
+                 
+                 
+                 tags$br(),
+                 wellPanel(id="data_chart",
+                           style = "overflow-y:scroll; max-height: 600px",
+                           
+                           h4("상권 정보"),
+                           dataTableOutput("store_info"),
+                           
+                           plotOutput("rader"),
+                           tableOutput("rader_t"),
+                           
+                           h4("개업/폐업률"),
+                           plotlyOutput("open_close"),
+                           
+                           h4("시간대별 생활인구"),
+                           plotlyOutput("time"),
+                           
+                           h4("연령별 인구"),
+                           plotlyOutput("age"),
+                           
+                           h4("상권랭킹"),
+                           plotlyOutput("rank"),
+                           
+                           
+                 )
+                 
+                 
+                 
+    ),
+    
+  ),
+  
+  
+  
+  
+  
+))
+
+
+#ui <- secure_app(ui)
