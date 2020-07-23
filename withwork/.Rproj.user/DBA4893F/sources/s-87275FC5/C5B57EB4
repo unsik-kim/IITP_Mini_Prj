@@ -1,0 +1,32 @@
+{
+    "id": "C5B57EB4",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595480455939.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "expression": "rader_total",
+        "caption": "rader_total",
+        "totalObservations": 1,
+        "displayedObservations": 1,
+        "variables": 5,
+        "cacheKey": "59F598BB",
+        "object": "rader_total",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=rader_total&cache_key=59F598BB&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8317129703101702757,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595480455939,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -8,23 +8,23 @@ library(rgdal)
 library(reshape2)
 library(plyr)
 library(ggradar)
+library(dplyr)
 library(leaflet)
 library("lubridate")
-library(MASS)
-library(dplyr)
+library("MASS")
 library("scales")
 library(data.table)
 library(shinyjs)
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/data.RData")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme//emd_dd.RData")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/emd_nn.RData")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/rader.RData")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/LOCAL_PEOPLE_DONG")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/dong_ip.RData")
-load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/seoul2.RData")
-#load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/data.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/emd_dd.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/emd_nn.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/rader.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/LOCAL_PEOPLE_DONG")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/dong_ip.RData")
+load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/seoul2.RData")
+#load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
 
-load(file = "C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/open_close_data.RData")
+load(file = "C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/open_close_data.RData")
 
 credit_pass = FALSE
 
@@ -201,7 +201,7 @@ open_close_chart <- function(category,code){
   return(per_data)
 }
 
-credentials <- read.csv("C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
+credentials <- read.csv("C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
 
 #서버 시작
 
@@ -214,11 +214,11 @@ server <- shinyServer(function(input, output) {
   #                           },
   #                           # This function returns the content of log_file
   #                           valueFunc = function() {
-  #                             load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
+  #                             load(file="C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
   #                           }
   # )
   
-  user_Data <- reactiveFileReader(100,NULL,"C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv",read.csv)
+  user_Data <- reactiveFileReader(100,NULL,"C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv",read.csv)
   
   # res_auth <- secure_server(
   #   check_credentials = check_credentials(credentials)
@@ -491,7 +491,7 @@ server <- shinyServer(function(input, output) {
       credentials<-data.frame(crede())
       print(credentials)
       
-      write.csv(credentials,"C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
+      write.csv(credentials,"C:/Users/fdew/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
       credentials<-data.frame(user_Data())
       credentials <- credentials %>% dplyr::select(user,password)
       print(credentials)

@@ -1,0 +1,32 @@
+{
+    "id": "FAC52102",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595471220220.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "expression": "dong_ip",
+        "caption": "dong_ip",
+        "totalObservations": 424,
+        "displayedObservations": 424,
+        "variables": 4,
+        "cacheKey": "2E7F96DD",
+        "object": "dong_ip",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=dong_ip&cache_key=2E7F96DD&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2637729005112,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595471220220,
+    "read_only": false,
+    "read_only_alternatives": []
+}

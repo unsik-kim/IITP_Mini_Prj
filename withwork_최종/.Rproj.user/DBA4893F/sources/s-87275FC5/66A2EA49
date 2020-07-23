@@ -1,0 +1,32 @@
+{
+    "id": "66A2EA49",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595492644148.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "expression": "dong",
+        "caption": "dong",
+        "totalObservations": "14",
+        "displayedObservations": "14",
+        "variables": "4",
+        "cacheKey": "6425C7B2",
+        "object": "dong",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=dong&cache_key=6425C7B2&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7235440063628845676,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595492644148,
+    "read_only": false,
+    "read_only_alternatives": []
+}
