@@ -1,3 +1,4 @@
+
 library(shiny)
 library(tidyverse)
 library(sf)
@@ -15,14 +16,14 @@ library("MASS")
 library("scales")
 library(data.table)
 library(shinyjs)
-load(file="C:/Users/admin/Documents/R/data.RData")
-load(file="C:/Users/admin/Documents/R/emd_dd.RData")
-load(file="C:/Users/admin/Documents/R/emd_nn.RData")
-load(file="C:/Users/admin/Documents/R/rader.RData")
-load(file="C:/Users/admin/Documents/R/LOCAL_PEOPLE_DONG")
-load(file="C:/Users/admin/Documents/R/dong_ip.RData")
-load(file="C:/Users/admin/Documents/R/seoul2.RData")
-load(file="C:/Users/admin/Documents/R/crdentials.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/data.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/emd_dd.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/emd_nn.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/rader.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/LOCAL_PEOPLE_DONG")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/dong_ip.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/seoul2.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/crdentials.RData")
 
 load(file = "C:/Users/admin/Documents/R/open_close_data.RData")
 
@@ -34,7 +35,7 @@ user_Data <- reactivePoll(1000, NULL,
                           },
                           # This function returns the content of log_file
                           valueFunc = function() {
-                            load(file="C:/Users/admin/Documents/R/crdentials.RData")
+                            load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/crdentials.RData")
                           }
 )
 #leflet 메인 지도 편의점 좌표 입력
@@ -481,7 +482,7 @@ server <- shinyServer(function(input, output) {
       print(crede())
       credentials<-data.frame(crede())
       print(credentials)
-      save(credentials,file="C:/Users/admin/Documents/R/crdentials.RData")
+      save(credentials,file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/crdentials.RData")
       hideElement(id="submit_form")
 
 

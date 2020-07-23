@@ -1,9 +1,10 @@
 library(ggplot2)
 library("lubridate")
 library(dplyr)
+library(ggplotly)
 library("MASS")
 library("scales")
-load("C:/Users/admin/Documents/R/LOCAL_PEOPLE_DONG")
+load("C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/server_ui2/LOCAL_PEOPLE_DONG")
 
 time_popul <- function(code){
 #동 데이터 추출

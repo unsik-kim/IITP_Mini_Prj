@@ -8,23 +8,23 @@ library(rgdal)
 library(reshape2)
 library(plyr)
 library(ggradar)
-library(dplyr)
 library(leaflet)
 library("lubridate")
-library("MASS")
+library(MASS)
+library(dplyr)
 library("scales")
 library(data.table)
 library(shinyjs)
-load(file="C:/Users/admin/Documents/R/data.RData")
-load(file="C:/Users/admin/Documents/R/emd_dd.RData")
-load(file="C:/Users/admin/Documents/R/emd_nn.RData")
-load(file="C:/Users/admin/Documents/R/rader.RData")
-load(file="C:/Users/admin/Documents/R/LOCAL_PEOPLE_DONG")
-load(file="C:/Users/admin/Documents/R/dong_ip.RData")
-load(file="C:/Users/admin/Documents/R/seoul2.RData")
-#load(file="C:/Users/admin/Documents/R/crdentials.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/data.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme//emd_dd.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/emd_nn.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/rader.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/LOCAL_PEOPLE_DONG")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/dong_ip.RData")
+load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/seoul2.RData")
+#load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
 
-load(file = "C:/Users/admin/Documents/R/open_close_data.RData")
+load(file = "C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/open_close_data.RData")
 
 credit_pass = FALSE
 
@@ -186,12 +186,12 @@ rank_chart<- function(code){
 open_close_chart <- function(category,code){
   per_data1 <- data.frame(t(oriData %>% 
                               filter(CD==11&종목==category) %>% 
-                              select("2018개업률", "2018폐업률", "2019개업률", "2019폐업률", "2020개업률", "2020폐업률")))
+                              dplyr::select("2018개업률", "2018폐업률", "2019개업률", "2019폐업률", "2020개업률", "2020폐업률")))
   names(per_data1)[1] <- c("수치")
   
   per_data2 <- data.frame(t(oriData %>% 
                               filter(CD==code&종목==category) %>% 
-                              select("2018개업률", "2018폐업률", "2019개업률", "2019폐업률", "2020개업률", "2020폐업률")))
+                              dplyr::select("2018개업률", "2018폐업률", "2019개업률", "2019폐업률", "2020개업률", "2020폐업률")))
   names(per_data2)[1] <- c("수치")
   
   per_data <- data.frame("년도"=c("2018","2019","2020"),
@@ -201,7 +201,7 @@ open_close_chart <- function(category,code){
   return(per_data)
 }
 
-credentials <- read.csv("C:/Users/admin/Documents/R/crdentials.csv")
+credentials <- read.csv("C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
 
 #서버 시작
 
@@ -214,11 +214,11 @@ server <- shinyServer(function(input, output) {
   #                           },
   #                           # This function returns the content of log_file
   #                           valueFunc = function() {
-  #                             load(file="C:/Users/admin/Documents/R/crdentials.RData")
+  #                             load(file="C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.RData")
   #                           }
   # )
   
-  user_Data <- reactiveFileReader(100,NULL,"C:/Users/admin/Documents/R/crdentials.csv",read.csv)
+  user_Data <- reactiveFileReader(100,NULL,"C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv",read.csv)
   
   # res_auth <- secure_server(
   #   check_credentials = check_credentials(credentials)
@@ -356,7 +356,7 @@ server <- shinyServer(function(input, output) {
     #상가 정보 출력
     output$store_info <- renderDataTable({
       seoul2 %>% filter(상권업종소분류명==category,행정동명==dong_code) %>%
-        select(상호명,지점명)%>%
+        dplyr::select(상호명,지점명)%>%
         as.data.frame(matrix(rnorm(100),5,5))
     },
     
@@ -491,7 +491,7 @@ server <- shinyServer(function(input, output) {
       credentials<-data.frame(crede())
       print(credentials)
       
-      write.csv(credentials,"C:/Users/admin/Documents/R/crdentials.csv")
+      write.csv(credentials,"C:/Users/admin/Documents/GitHub/IITP_Mini_Prj/withme/crdentials.csv")
       credentials<-data.frame(user_Data())
       credentials <- credentials %>% dplyr::select(user,password)
       print(credentials)

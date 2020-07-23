@@ -1,9 +1,9 @@
 {
     "id": "82CAD5CF",
-    "path": "C:/Users/admin/Desktop/easy_r/open_close/open_close.R",
+    "path": "~/GitHub/IITP_Mini_Prj/open_close/open_close.R",
     "project_path": "open_close.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2525965323",
     "contents": "",
     "dirty": false,
     "created": 1595218472818.0,
@@ -11,15 +11,15 @@
     "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "12,29",
-        "scrollLine": "0"
+        "cursorPosition": "49,90",
+        "scrollLine": "41"
     },
     "folds": "",
-    "lastKnownWriteTime": 1595234436,
+    "lastKnownWriteTime": 1595321301,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1595234436199,
+    "last_content_update": 1595321301,
     "read_only": false,
     "read_only_alternatives": []
 }
