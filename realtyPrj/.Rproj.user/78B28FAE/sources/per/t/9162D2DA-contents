@@ -1,0 +1,54 @@
+install.packages("dplyr")
+
+library(readxl)
+library(dplyr)
+
+
+# 엑셀 불러오기
+realtyData <- read_excel("서울지역매물정보.xlsx")
+
+# 분석하기 편리하게 각 데이터 가공
+realtyData$premiumPrice <- gsub("없음", "0", realtyData$premiumPrice)
+realtyData$premiumPrice <- gsub("억", "", realtyData$premiumPrice)
+realtyData$premiumPrice <- gsub("비공개", "-1", realtyData$premiumPrice)
+realtyData$floor <- gsub("반지하", "0.5", realtyData$floor)
+realtyData$floor <- gsub("지하1", "-1", realtyData$floor)
+realtyData$floor <- gsub("지하", "-", realtyData$floor)
+realtyData$floor <- gsub("층", "", realtyData$floor)
+realtyData$size <- gsub("㎡", "", realtyData$size)
+realtyData$sizePY <- gsub("PY", "", realtyData$sizePY)
+
+
+realtyData$originDeposit <- as.numeric(realtyData$originDeposit)/10
+realtyData$originMonthlyRent <- as.numeric(realtyData$originMonthlyRent)/10
+realtyData$newOriginMonthlyRent <- realtyData$originMonthlyRent + (realtyData$originDeposit*0.05/12)
+realtyData$premiumPrice <- as.numeric(realtyData$premiumPrice)
+realtyData$floor <- as.numeric(realtyData$floor)
+realtyData$size <- as.numeric(realtyData$size)
+realtyData$sizePY <- as.numeric(realtyData$sizePY)
+
+
+
+# 평당 임대료 산출
+realtyData$sizePerRent <- realtyData$newOriginMonthlyRent / realtyData$size
+realtyData$sizePyPerRent <- realtyData$newOriginMonthlyRent / realtyData$sizePY
+
+
+
+# 중복 데이터 삭제
+duplicated <- unique(realtyData)
+
+
+
+# 1층 월세 매물만 추출
+selected <- duplicated %>% filter(priceType==1 & floor=="1")
+
+
+# 각 동별로 평당 임대료 데이터 분석
+analyesed <- selected %>% group_by(regionName) %>% summarise(mean_sizePerRent=mean(sizePerRent),    # 평균
+                                                           sd_sizePerRent=sd(sizePerRent),          # 표준편차
+                                                           sum_sizePerRent=sum(sizePerRent),        # 합계
+                                                           median_sizePerRent=median(sizePerRent),  # 중간값
+                                                           min_sizePerRent=min(sizePerRent),        # 최소값
+                                                           max_sizePerRent=max(sizePerRent),        # 최대값
+                                                           n_sizePerRent=n())                       # 개수

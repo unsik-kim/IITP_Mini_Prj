@@ -1,0 +1,7 @@
+install.packages("readxl")
+
+library(readxl)
+
+seoul2 <- read_excel("seoul2.xlsx")
+
+seoul2$행정동코드 <- substr(seoul2$행정동코드, 1, 8)

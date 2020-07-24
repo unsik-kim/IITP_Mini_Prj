@@ -1,0 +1,25 @@
+{
+    "id": "9162D2DA",
+    "path": "~/R/realtyPrj/script1.R",
+    "project_path": "script1.R",
+    "type": "r_source",
+    "hash": "2539040838",
+    "contents": "",
+    "dirty": false,
+    "created": 1594878506295.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "39,0",
+        "scrollLine": "23"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1594905672,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1594905672151,
+    "read_only": false,
+    "read_only_alternatives": []
+}
