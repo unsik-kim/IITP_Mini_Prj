@@ -1,0 +1,32 @@
+{
+    "id": "EAC08943",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595545772863.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "seoul2",
+        "caption": "seoul2",
+        "totalObservations": 391500,
+        "displayedObservations": 391500,
+        "variables": 8,
+        "cacheKey": "D9F59CDE",
+        "object": "seoul2",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=seoul2&cache_key=D9F59CDE&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 5558049392203756130,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595545772863,
+    "read_only": false,
+    "read_only_alternatives": []
+}
